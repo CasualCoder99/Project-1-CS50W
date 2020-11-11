@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+	
+	{% if results %}
+		{% for result in results %}
+			<li>
+				<a href="{% url 'title_view' result %}">{{result}}</a>
+			</li> 
+		{% endfor %}
+	{% else %}
+		<h4>No results to show.</h4>
+
+	{% endif %}
+{% endblock %}
